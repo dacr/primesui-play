@@ -1,0 +1,29 @@
+@import fr.janalyse.primes._
+@import fr.janalyse.primesui._
+
+@(ctx:PrimesUIContext, engine:PrimesEngine)
+
+@import ctx._
+@import engine._
+
+@main(ctx, title="Configuration") {
+  <h1>Configuration</h1>
+  <p>
+  <form role="form" method="POST" enctype="application/x-www-form-urlencoded; charset=utf-8" action="@configUrl">
+    <div class="checkbox">
+      <label>
+      @if(engine.isUseCache) {
+        <input type="checkbox" name="usecache" value="" checked="checked">
+      } else {
+        <input type="checkbox" name="usecache" value="">
+      }
+        Use application cache
+      </label>
+      <br/>
+      <input type="submit" value="Submit"/>
+    </div>
+  </form>
+  </p>
+  @backmenu(None, homeUrl)
+
+}

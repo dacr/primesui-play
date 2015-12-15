@@ -1,0 +1,11 @@
+@import fr.janalyse.primes._
+@import fr.janalyse.primesui._
+@(ctx:PrimesUIContext, engine:PrimesEngine, upto:Long, msgOpt:Option[String])
+
+@main(ctx, title="Populate") {
+  <h1>Primes generator state : @{engine.populate(upto)}</h1>
+  @for(msg <- msgOpt) {
+    <p>WARN : @msg</p>
+  }
+  @backmenu(None, ctx.homeUrl)
+}
