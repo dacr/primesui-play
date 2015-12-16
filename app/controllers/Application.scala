@@ -64,7 +64,7 @@ class Application extends Controller {
     configUrl = url("/config")
     )
   
-  def engine = PrimesEngine.engine
+  import PrimesEngine.engine
   
   def index = Action { request =>
     if (engine.useSession) {
