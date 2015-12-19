@@ -4,8 +4,8 @@
 
 # Home page
 GET  /                           controllers.Application.index
-GET  /check                      controllers.Application.checkRandom
 GET  /check/:num                 controllers.Application.check(num: Long)
+GET  /check                      controllers.Application.checkRandom
 
 GET  /css/*file               controllers.Assets.versioned(path="/public/css", file: Asset)
 GET  /fonts/*file             controllers.Assets.versioned(path="/public/fonts", file: Asset)

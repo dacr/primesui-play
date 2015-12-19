@@ -4,12 +4,12 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
-  jdbc,
-  cache,
-  ws,
+//  jdbc,
+//  cache,
+//  ws,
   specs2 % Test,
   "fr.janalyse"        %% "primes"               % "1.2.2-SNAPSHOT",
   "fr.janalyse"        %% "unittools"            % "0.2.7-SNAPSHOT",
@@ -19,8 +19,7 @@ libraryDependencies ++= Seq(
   "net.sf.ehcache"      % "ehcache-core"         % "2.6.11",
   "javax.transaction"   % "jta"                  % "1.1", // required for ehcache
   "mysql"               % "mysql-connector-java" % "5.1.36",
-  "ch.qos.logback"      % "logback-classic"      % "1.1.3",
-  "org.codehaus.janino" % "janino"               % "2.7.8" // Allow logback config file conditionals
+  "ch.qos.logback"      % "logback-classic"      % "1.1.3"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
